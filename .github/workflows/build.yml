@@ -18,7 +18,7 @@ jobs:
         node-version: [10.x, 12.x]
 
     steps:
-     - uses: docker/checkout-action@v1
+     - uses: actions/checkout@v2
      - name: build-push
        uses: docker/build-push-action@v1
        with:
