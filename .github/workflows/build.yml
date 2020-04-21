@@ -31,8 +31,8 @@ jobs:
      - name: Configure my AWS Credentials
        uses: aws-actions/configure-aws-credentials@v1
        with:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws-access-key-id: ASIAZB53AQAN2RUMWHBP
+         aws-secret-access-key: snnaF+O0wv2Sq0FEwJ/qnPWrjgUWacKaghJYwlWl
          aws-region: us-east-1
         
      - name: Deploy AWS Ressources
