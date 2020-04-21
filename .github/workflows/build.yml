@@ -28,4 +28,4 @@ jobs:
          repository: valm13/mywebserver
          tag_with_sha: true
      - name: Deploy AWS Ressources
-       run: aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack
+       run: aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --region us-east-1
