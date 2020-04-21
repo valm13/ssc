@@ -28,7 +28,7 @@ jobs:
          repository: valm13/mywebserver
          tag_with_sha: true
       
-     - name: Configure AWS Credentials
+     - name: Configure my AWS Credentials
        uses: aws-actions/configure-aws-credentials@v1
        with:
          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
