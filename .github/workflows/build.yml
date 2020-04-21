@@ -27,13 +27,11 @@ jobs:
          registry: docker.io
          repository: valm13/mywebserver
          tag_with_sha: true
-      
-    # - name: Configure my AWS Credentials
-    #   uses: aws-actions/configure-aws-credentials@v1
-    #   with:
-     #    aws-access-key-id: ASIAZB53AQAN2RUMWHBP
-     #    aws-secret-access-key: snnaF+O0wv2Sq0FEwJ/qnPWrjgUWacKaghJYwlWl
-    #     aws-region: us-east-1
-        
-  #   - name: Deploy AWS Ressources
-   #    run: aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --region us-east-1
+     - name: Deploy AWS Ressources
+       run: |
+         aws configure set default.region us-east-1
+         aws configure set default.output json
+         aws configure set aws_access_key_id ASIAZB53AQAN2RUMWHBP
+         aws configure set aws_secret_access_key snnaF+O0wv2Sq0FEwJ/qnPWrjgUWacKaghJYwlWl
+         aws configure set aws_session_token FwoGZXIvYXdzEBYaDMpJAL5rUoLLVy11iSLNAS3nSUjHnx5LwlhvuaL+L5vqsN5a0QW2mG3moel0dAEUnwC82XSyAvWgyJHX8DJ9Nr6JmeKz6iSq8DHiSL1WPKkYuc1pcN0JyYz0kOuEcoFlZfEv0UvVogO/EE5HT8mKBJDEdnA4Han65xYYBDo4mq4wWzVcmQspdsSKvLu8awhpQROcohZ6HMUqf1uO3C1CxtCAIGwbf0rbe2w/fWe//dfr30FifNDpMTHR6XdPldeKZ5VqAYIJdI/SBEmHyHOV3efRPjwx4zwl5yz2SZMoxNL79AUyLfaMRkzEGV32ZVT11wRGE5Pd7Ta8Pi4wHwXu3X462lwXWVZUCsYxpb0tLfF0dg==
+         aws aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --no-fail-on-empty-changeset
