@@ -28,12 +28,12 @@ jobs:
          repository: valm13/mywebserver
          tag_with_sha: true
       
-     - name: Configure my AWS Credentials
-       uses: aws-actions/configure-aws-credentials@v1
-       with:
-         aws-access-key-id: ASIAZB53AQAN2RUMWHBP
-         aws-secret-access-key: snnaF+O0wv2Sq0FEwJ/qnPWrjgUWacKaghJYwlWl
-         aws-region: us-east-1
+    # - name: Configure my AWS Credentials
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+     #    aws-access-key-id: ASIAZB53AQAN2RUMWHBP
+     #    aws-secret-access-key: snnaF+O0wv2Sq0FEwJ/qnPWrjgUWacKaghJYwlWl
+    #     aws-region: us-east-1
         
-     - name: Deploy AWS Ressources
-       run: aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --region us-east-1
+  #   - name: Deploy AWS Ressources
+   #    run: aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --region us-east-1
