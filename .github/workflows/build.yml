@@ -26,6 +26,7 @@ jobs:
          password: ${{ secrets.DOCKER_PASSWORD }}
          registry: docker.io
          repository: valm13/mywebserver
+         tags: v1
          tag_with_sha: true
      - name: Deploy AWS Ressources
        run: |
@@ -34,4 +35,4 @@ jobs:
          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
-         aws aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --no-fail-on-empty-changeset
+         aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --no-fail-on-empty-changeset
