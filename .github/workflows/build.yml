@@ -53,6 +53,12 @@ jobs:
          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
          aws cloudformation deploy --template-file cloudformation.yaml --stack-name valm13-stack --no-fail-on-empty-changeset
+         
+     - name: deploy-to-k8s
+       run: |
+         aws eks update-kubeconfig --name isen-2
+         kubectl kustomize . | kubectl apply -f -
+                  
      - name: deploy-to-aws
        run: |
          aws cloudformation deploy --template-file ecs-task.yaml --stack-name ecs-task --parameter-overrides ImageName=docker.io/valm13/mywebserver:sha-$(git rev-parse --short HEAD) --no-fail-on-empty-changeset
