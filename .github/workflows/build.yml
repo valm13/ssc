@@ -33,6 +33,18 @@ jobs:
          repository: valm13/mywebserver
          tags: v1
          tag_with_sha: true
+         
+     - name: prepare-kustomize
+       run: |
+         sed -i "s#IMAGE_NAME#allanduee/ssc#g" kustomization.yaml
+         sed -i "s/IMAGE_TAG/sha-$(git rev-parse --short HEAD)/g" kustomization.yaml
+         cat kustomization.yaml
+         
+     - name: deploy-to-k8s
+       run: |
+         aws eks update-kubeconfig --name isen
+         kubectl kustomize . | kubectl apply -f -
+        
      - name: Deploy AWS Ressources
        run: |
          aws configure set default.region us-east-1
