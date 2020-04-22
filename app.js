@@ -5,7 +5,7 @@ const fs = require('fs');
 const hostname = '0.0.0.0';
 const port = 3000;
 
-const greeting = process.env.GREETING || "Hello World Test"
+const greeting = process.env.GREETING || "Hello World"
 const path = process.env.FILE_PATH || '/var/secret/secret.txt'
 
 let fileContent = ""
