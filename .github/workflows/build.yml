@@ -19,6 +19,11 @@ jobs:
 
     steps:
      - uses: actions/checkout@v2
+     
+     - uses: minchao/cfn-nag-action@master
+       with:
+         args: '--input-path cf-all.yaml'
+        
      - name: build-push
        uses: docker/build-push-action@v1
        with:
