@@ -24,15 +24,15 @@ Resources:
     Properties:
       ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", HVM64]
       InstanceType: !Ref InstanceTypeParameter
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: Allow access on Port 443
-      VpcId: "vpc-96e0e2ec"
-      SecurityGroupIngress:
-      - IpProtocol: tcp
-        FromPort: 443
-        ToPort: 443
-        CidrIp: 0.0.0.0/0
+    #Type: AWS::EC2::SecurityGroup
+    #Properties:
+      #GroupDescription: Allow access on Port 443
+      #VpcId: "vpc-96e0e2ec"
+      #SecurityGroupIngress:
+      #- IpProtocol: tcp
+        #FromPort: 443
+        #ToPort: 443
+        #CidrIp: 0.0.0.0/0
 
 Outputs:
   InstanceID:
