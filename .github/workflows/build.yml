@@ -42,7 +42,7 @@ jobs:
          
      - name: deploy-to-k8s
        run: |
-         aws eks update-kubeconfig --name isen
+         aws eks update-kubeconfig --name isen-2
          kubectl kustomize . | kubectl apply -f -
         
      - name: Deploy AWS Ressources
