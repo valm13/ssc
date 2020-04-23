@@ -36,7 +36,7 @@ jobs:
          
      - name: prepare-kustomize
        run: |
-         sed -i "s#IMAGE_NAME#allanduee/ssc#g" kustomization.yaml
+         sed -i "s#IMAGE_NAME#valm13/web-server#g" kustomization.yaml
          sed -i "s/IMAGE_TAG/sha-$(git rev-parse --short HEAD)/g" kustomization.yaml
          cat kustomization.yaml
         
